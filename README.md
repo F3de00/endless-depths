@@ -33,6 +33,13 @@ src/main/resources/it/unicam/cs/mpgc/rpg127378/view/
 
 La descrizione delle funzionalità, delle responsabilità, delle classi, della persistenza e dei meccanismi di estensione è nella [Wiki del progetto](https://github.com/F3de00/RPJ/wiki).
 
+## Risorse grafiche
+
+Immagini e font non sono stati realizzati da me:
+
+- Immagini di eroi, nemici e fuoco: [Tiny Dungeon](https://kenney.nl/assets/tiny-dungeon) di Kenney e [Tiny Creatures](https://opengameart.org/content/tiny-creatures) di Clint Bellanger, entrambe con licenza CC0 (pubblico dominio).
+- Font: [Jersey 15](https://fonts.google.com/specimen/Jersey+15) di The Soft Type Project Authors, con licenza SIL Open Font License 1.1 (il testo della licenza è nella cartella `view/font/`).
+
 ## Uso di strumenti di AI
 
-Nella realizzazione del progetto è stato usato Claude Code (Anthropic) come assistente, per discutere le scelte di progettazione, accelerare la scrittura di alcune parti del codice delle classi che venivano definite, verificare il bilanciamento con simulazioni e preparare la documentazione.
+Nella realizzazione del progetto è stato usato Claude Code (Anthropic) come assistente, per discutere le scelte di progettazione, accelerare la scrittura di alcune parti del codice delle classi che venivano precedentemente definite, verificare il bilanciamento con simulazioni e preparare la documentazione.
