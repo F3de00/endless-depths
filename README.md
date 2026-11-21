@@ -31,7 +31,7 @@ src/main/resources/it/unicam/cs/mpgc/rpg127378/view/
 
 ## Documentazione
 
-La descrizione delle funzionalità, delle responsabilità, delle classi, della persistenza e dei meccanismi di estensione è nella [Wiki del progetto](https://github.com/F3de00/RPJ/wiki).
+La descrizione delle funzionalità, delle responsabilità, delle classi, della persistenza e dei meccanismi di estensione è nella [Wiki del progetto](https://github.com/F3de00/endless-depths/wiki).
 
 ## Risorse grafiche
 
