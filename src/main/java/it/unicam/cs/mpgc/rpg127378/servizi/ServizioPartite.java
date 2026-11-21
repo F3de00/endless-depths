@@ -26,12 +26,12 @@ public class ServizioPartite {
     public boolean esistePartitaSalvata() {return repository.caricaPartitaInCorso().isPresent();}
 
     public Partita nuovaPartita(StatisticheBase tipoEroe) {
-        return registraRisultatoAllaFine(fabbrica.nuovaPartita(tipoEroe));
+        return conGestioneSconfitta(fabbrica.nuovaPartita(tipoEroe));
     }
 
     public Partita riprendiPartita() {
         PartitaSalvata partitaSalvata = repository.caricaPartitaInCorso().orElseThrow(() -> new IllegalStateException("Nessuna partita salvata"));
-        return registraRisultatoAllaFine(fabbrica.riprendiPartita(partitaSalvata));
+        return conGestioneSconfitta(fabbrica.riprendiPartita(partitaSalvata));
     }
 
     public void salvaPartita(Partita partita) {
@@ -39,9 +39,10 @@ public class ServizioPartite {
         registraRisultato(partita);
     }
 
-    private Partita registraRisultatoAllaFine(Partita partita) {
+    private Partita conGestioneSconfitta(Partita partita) {
         partita.aggiungiOsservatore(notifica -> {
             if (notifica instanceof PartitaPersa) {
+                repository.cancellaPartitaInCorso();
                 registraRisultato(partita);
             }
         });

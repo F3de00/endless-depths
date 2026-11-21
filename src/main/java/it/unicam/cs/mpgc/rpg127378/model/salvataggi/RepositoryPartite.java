@@ -5,6 +5,7 @@ import java.util.Optional;
 public interface RepositoryPartite {
     void salvaPartitaInCorso(PartitaSalvata partita);
     Optional<PartitaSalvata> caricaPartitaInCorso();
+    void cancellaPartitaInCorso();
     void salvaUltimaPartita(RisultatoPartita partita);
     Optional<RisultatoPartita> caricaUltimaPartita();
     void salvaMigliorePartita(RisultatoPartita partita);

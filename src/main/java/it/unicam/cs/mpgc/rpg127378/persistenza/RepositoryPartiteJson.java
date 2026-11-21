@@ -37,6 +37,15 @@ public class RepositoryPartiteJson implements RepositoryPartite {
     }
 
     @Override
+    public void cancellaPartitaInCorso() {
+        try {
+            Files.deleteIfExists(cartella.resolve(FILE_PARTITA_IN_CORSO));
+        } catch (IOException e) {
+            throw new UncheckedIOException("Impossibile cancellare " + FILE_PARTITA_IN_CORSO, e);
+        }
+    }
+
+    @Override
     public void salvaUltimaPartita(RisultatoPartita partita) {
         scrivi(FILE_ULTIMA_PARTITA, partita);
     }
