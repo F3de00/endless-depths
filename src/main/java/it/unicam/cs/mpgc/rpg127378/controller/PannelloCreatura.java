@@ -8,7 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 public final class PannelloCreatura {
-    private static final double DIMENSIONE_IMMAGINE = 64;
+    private static final double DIMENSIONE_IMMAGINE = 80;
 
     private PannelloCreatura() {}
 

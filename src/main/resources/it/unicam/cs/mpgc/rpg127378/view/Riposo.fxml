@@ -9,7 +9,7 @@
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="24" styleClass="schermata" stylesheets="@stile.css">
     <Label fx:id="etichettaStanza" styleClass="titolo"/>
     <ImageView>
-        <Image url="@immagini/fuoco.png" requestedWidth="96" requestedHeight="96" smooth="false"/>
+        <Image url="@immagini/fuoco.png" requestedWidth="112" requestedHeight="112" smooth="false"/>
     </ImageView>
     <Label text="Trovi un fuoco acceso e ti fermi a riprendere fiato." styleClass="sottotitolo"/>
     <Label fx:id="etichettaRecupero" styleClass="testo"/>

@@ -10,7 +10,7 @@
     <HBox fx:id="contenitoreNemici" alignment="CENTER" spacing="16"/>
     <VBox fx:id="contenitoreEroe" alignment="CENTER"/>
     <HBox fx:id="contenitoreAzioni" alignment="CENTER" spacing="16"/>
-    <TextArea fx:id="registro" editable="false" prefHeight="110" maxWidth="600" styleClass="registro"/>
+    <TextArea fx:id="registro" editable="false" prefHeight="160" maxWidth="760" styleClass="registro"/>
     <Label fx:id="etichettaEsito" styleClass="titolo"/>
     <Button fx:id="pulsanteContinua" text="Continua" onAction="#continua" visible="false" styleClass="pulsante"/>
 </VBox>

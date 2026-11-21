@@ -18,8 +18,8 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class App extends Application {
-    private static final double LARGHEZZA = 960;
-    private static final double ALTEZZA = 640;
+    private static final double LARGHEZZA = 1200;
+    private static final double ALTEZZA = 800;
     private static final double PORZIONE_SCHERMO = 0.9;
     private static final Path CARTELLA_SALVATAGGI = Path.of(System.getProperty("user.home"), ".rpj");
 

@@ -14,7 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
 public class ControllerSceltaEroe {
-    private static final double DIMENSIONE_IMMAGINE = 80;
+    private static final double DIMENSIONE_IMMAGINE = 96;
 
     private final ServizioPartite servizio;
     private final Navigatore navigatore;
