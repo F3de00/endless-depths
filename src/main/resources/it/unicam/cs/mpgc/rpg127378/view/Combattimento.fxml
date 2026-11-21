@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="16" styleClass="schermata" stylesheets="@stile.css">
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" spacing="12" styleClass="schermata" stylesheets="@stile.css">
     <HBox fx:id="contenitoreNemici" alignment="CENTER" spacing="16"/>
-    <Label fx:id="etichettaEroe" styleClass="testo"/>
+    <VBox fx:id="contenitoreEroe" alignment="CENTER"/>
     <HBox fx:id="contenitoreAzioni" alignment="CENTER" spacing="16"/>
-    <TextArea fx:id="registro" editable="false" prefHeight="160" maxWidth="600" styleClass="registro"/>
+    <TextArea fx:id="registro" editable="false" prefHeight="110" maxWidth="600" styleClass="registro"/>
     <Label fx:id="etichettaEsito" styleClass="titolo"/>
     <Button fx:id="pulsanteContinua" text="Continua" onAction="#continua" visible="false" styleClass="pulsante"/>
 </VBox>

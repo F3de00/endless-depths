@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 public class ControllerCombattimento implements OsservatorePartita {
@@ -32,7 +33,7 @@ public class ControllerCombattimento implements OsservatorePartita {
     @FXML
     private HBox contenitoreNemici;
     @FXML
-    private Label etichettaEroe;
+    private VBox contenitoreEroe;
     @FXML
     private HBox contenitoreAzioni;
     @FXML
@@ -115,7 +116,8 @@ public class ControllerCombattimento implements OsservatorePartita {
     private void aggiornaNemici() {
         contenitoreNemici.getChildren().clear();
         for (Entita nemico : combattimento.getNemici()) {
-            Button pulsante = new Button(nemico.getNome() + "\n" + nemico.getVita() + "/" + nemico.getVitaMassima());
+            Button pulsante = new Button();
+            pulsante.setGraphic(PannelloCreatura.crea(nemico));
             pulsante.getStyleClass().add(nemico == bersaglio ? "nemico-selezionato" : "nemico");
             pulsante.setDisable(!nemico.isViva());
             pulsante.setOnAction(evento -> seleziona(nemico));
@@ -124,8 +126,7 @@ public class ControllerCombattimento implements OsservatorePartita {
     }
 
     private void aggiornaEroe() {
-        Entita eroe = combattimento.getEroe();
-        etichettaEroe.setText(eroe.getNome() + " | Vita " + eroe.getVita() + "/" + eroe.getVitaMassima() + " | Mana " + eroe.getMana() + "/" + eroe.getManaMassimo());
+        contenitoreEroe.getChildren().setAll(PannelloCreatura.crea(combattimento.getEroe()));
     }
 
     private void aggiornaAzioni() {

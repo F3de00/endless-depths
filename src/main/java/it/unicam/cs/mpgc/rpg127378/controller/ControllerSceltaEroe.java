@@ -9,10 +9,13 @@ import it.unicam.cs.mpgc.rpg127378.model.salvataggi.RisultatoPartita;
 import it.unicam.cs.mpgc.rpg127378.servizi.ServizioPartite;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
 public class ControllerSceltaEroe {
+    private static final double DIMENSIONE_IMMAGINE = 80;
+
     private final ServizioPartite servizio;
     private final Navigatore navigatore;
 
@@ -40,6 +43,8 @@ public class ControllerSceltaEroe {
         for (StatisticheBase eroe : servizio.getEroiDisponibili()) {
             Button pulsante = new Button(descrizione(eroe));
             pulsante.getStyleClass().add("scheda-eroe");
+            pulsante.setContentDisplay(ContentDisplay.TOP);
+            ImmagineCreatura.crea(eroe.tipo(), DIMENSIONE_IMMAGINE).ifPresent(pulsante::setGraphic);
             pulsante.setOnAction(evento -> navigatore.iniziaPartita(eroe));
             contenitoreEroi.getChildren().add(pulsante);
         }

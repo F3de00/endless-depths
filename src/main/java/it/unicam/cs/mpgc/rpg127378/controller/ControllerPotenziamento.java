@@ -7,11 +7,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public class ControllerPotenziamento {
     private final Partita partita;
     private final Navigatore navigatore;
 
+    @FXML
+    private VBox contenitoreEroe;
     @FXML
     private Label etichettaEroe;
     @FXML
@@ -25,7 +28,8 @@ public class ControllerPotenziamento {
     @FXML
     private void initialize() {
         Entita eroe = partita.getEroe();
-        etichettaEroe.setText(eroe.getNome() + " | Vita " + eroe.getVita() + "/" + eroe.getVitaMassima() + " | Mana " + eroe.getMana() + "/" + eroe.getManaMassimo() + " | Attacco " + eroe.getAttacco() + " | Velocità " + eroe.getVelocita());
+        contenitoreEroe.getChildren().setAll(PannelloCreatura.crea(eroe));
+        etichettaEroe.setText("Attacco " + eroe.getAttacco() + " | Velocità " + eroe.getVelocita());
         for (Potenziamento potenziamento : Potenziamento.values()) {
             Button pulsante = new Button(potenziamento.getDescrizione());
             pulsante.getStyleClass().add("pulsante");

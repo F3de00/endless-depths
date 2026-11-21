@@ -1,10 +1,10 @@
 package it.unicam.cs.mpgc.rpg127378.controller;
 
 import it.unicam.cs.mpgc.rpg127378.model.Partita;
-import it.unicam.cs.mpgc.rpg127378.model.creature.Entita;
 import it.unicam.cs.mpgc.rpg127378.model.notifiche.RiposoEffettuato;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 public class ControllerRiposo {
     private final Partita partita;
@@ -16,7 +16,7 @@ public class ControllerRiposo {
     @FXML
     private Label etichettaRecupero;
     @FXML
-    private Label etichettaEroe;
+    private VBox contenitoreEroe;
 
     public ControllerRiposo(Partita partita, Navigatore navigatore, RiposoEffettuato riposo) {
         this.partita = partita;
@@ -26,10 +26,9 @@ public class ControllerRiposo {
 
     @FXML
     private void initialize() {
-        Entita eroe = partita.getEroe();
         etichettaStanza.setText("Stanza " + riposo.numeroStanza() + ": Riposo");
         etichettaRecupero.setText("Vita recuperata: +" + riposo.vitaRecuperata() + "    Mana recuperato: +" + riposo.manaRecuperato());
-        etichettaEroe.setText(eroe.getNome() + " | Vita " + eroe.getVita() + "/" + eroe.getVitaMassima() + " | Mana " + eroe.getMana() + "/" + eroe.getManaMassimo());
+        contenitoreEroe.getChildren().setAll(PannelloCreatura.crea(partita.getEroe()));
     }
 
     @FXML

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Jersey 15";
+    src: url("font/Jersey15.ttf");
+}
+
 .schermata {
     -sfondo: #1B2A1E;
     -superficie: #2F3E2F;
@@ -5,61 +10,117 @@
     -testo: #DAD7C9;
     -testo-secondario: #A8B08D;
     -oro: #E8D9A8;
+    -bordo: #0F1A11;
+    -rosso: #C0392B;
+    -blu: #3B6FB6;
     -fx-background-color: -sfondo;
+    -fx-font-family: "Jersey 15";
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
 }
 
 .titolo {
-    -fx-font-size: 40px;
+    -fx-font-size: 48px;
     -fx-text-fill: -oro;
 }
 
 .sottotitolo {
-    -fx-font-size: 18px;
+    -fx-font-size: 22px;
     -fx-text-fill: -testo-secondario;
 }
 
 .testo {
-    -fx-font-size: 18px;
+    -fx-font-size: 22px;
     -fx-text-fill: -testo;
 }
 
 .pulsante {
-    -fx-font-size: 18px;
+    -fx-padding: 8px 18px;
+    -fx-font-size: 22px;
     -fx-text-fill: -testo;
-    -fx-background-color: -superficie;
+    -fx-background-color: -bordo, -superficie;
+    -fx-background-insets: 0, 3;
+    -fx-background-radius: 0;
 }
 
 .pulsante:hover {
-    -fx-background-color: -superficie-attiva;
+    -fx-background-color: -oro, -superficie-attiva;
 }
 
 .nemico {
-    -fx-pref-width: 160px;
-    -fx-font-size: 16px;
-    -fx-text-fill: -testo;
-    -fx-background-color: -superficie;
+    -fx-padding: 10px;
+    -fx-background-color: -bordo, -superficie;
+    -fx-background-insets: 0, 3;
+    -fx-background-radius: 0;
 }
 
 .nemico-selezionato {
-    -fx-pref-width: 160px;
-    -fx-font-size: 16px;
-    -fx-text-fill: -sfondo;
-    -fx-background-color: -oro;
+    -fx-padding: 10px;
+    -fx-background-color: -oro, -superficie-attiva;
+    -fx-background-insets: 0, 3;
+    -fx-background-radius: 0;
+}
+
+.nome-creatura {
+    -fx-font-size: 20px;
+    -fx-text-fill: -testo;
+}
+
+.valore-barra {
+    -fx-min-width: 56px;
+    -fx-font-size: 18px;
+    -fx-text-fill: -testo;
+}
+
+.barra-vita, .barra-mana {
+    -fx-pref-width: 140px;
+    -fx-pref-height: 18px;
+}
+
+.barra-vita .track, .barra-mana .track {
+    -fx-background-color: -bordo, -sfondo;
+    -fx-background-insets: 0, 3;
+    -fx-background-radius: 0;
+}
+
+.barra-vita .bar {
+    -fx-background-color: -rosso;
+    -fx-background-insets: 3;
+    -fx-background-radius: 0;
+}
+
+.barra-mana .bar {
+    -fx-background-color: -blu;
+    -fx-background-insets: 3;
+    -fx-background-radius: 0;
 }
 
 .registro {
-    -fx-font-size: 14px;
-    -fx-control-inner-background: -superficie;
+    -fx-font-size: 20px;
+    -fx-text-fill: -testo;
+    -fx-background-color: -bordo, -superficie;
+    -fx-background-insets: 0, 3;
+    -fx-background-radius: 0;
+    -fx-padding: 3px;
+}
+
+.registro .content {
+    -fx-background-color: -superficie;
+    -fx-background-radius: 0;
 }
 
 .scheda-eroe {
     -fx-pref-width: 220px;
-    -fx-pref-height: 240px;
-    -fx-font-size: 15px;
+    -fx-pref-height: 320px;
+    -fx-wrap-text: true;
+    -fx-text-alignment: center;
+    -fx-font-size: 18px;
     -fx-text-fill: -testo;
-    -fx-background-color: -superficie;
+    -fx-background-color: -bordo, -superficie;
+    -fx-background-insets: 0, 3;
+    -fx-background-radius: 0;
 }
 
 .scheda-eroe:hover {
-    -fx-background-color: -superficie-attiva;
+    -fx-background-color: -oro, -superficie-attiva;
 }

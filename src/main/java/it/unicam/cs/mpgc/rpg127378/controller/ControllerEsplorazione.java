@@ -1,7 +1,6 @@
 package it.unicam.cs.mpgc.rpg127378.controller;
 
 import it.unicam.cs.mpgc.rpg127378.model.Partita;
-import it.unicam.cs.mpgc.rpg127378.model.creature.Entita;
 import it.unicam.cs.mpgc.rpg127378.model.notifiche.CombattimentoIniziato;
 import it.unicam.cs.mpgc.rpg127378.model.notifiche.Notifica;
 import it.unicam.cs.mpgc.rpg127378.model.notifiche.OsservatorePartita;
@@ -11,6 +10,7 @@ import it.unicam.cs.mpgc.rpg127378.model.notifiche.StanzaCompletata;
 import it.unicam.cs.mpgc.rpg127378.model.notifiche.TurnoEseguito;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 
 public class ControllerEsplorazione implements OsservatorePartita {
     private final Partita partita;
@@ -19,7 +19,7 @@ public class ControllerEsplorazione implements OsservatorePartita {
     @FXML
     private Label etichettaStanza;
     @FXML
-    private Label etichettaEroe;
+    private VBox contenitoreEroe;
 
     public ControllerEsplorazione(Partita partita, Navigatore navigatore) {
         this.partita = partita;
@@ -53,8 +53,7 @@ public class ControllerEsplorazione implements OsservatorePartita {
     }
 
     private void aggiorna() {
-        Entita eroe = partita.getEroe();
         etichettaStanza.setText("Stanza " + (partita.getStanzeCompletate() + 1));
-        etichettaEroe.setText(eroe.getNome() + " | Vita " + eroe.getVita() + "/" + eroe.getVitaMassima() + " | Mana " + eroe.getMana() + "/" + eroe.getManaMassimo());
+        contenitoreEroe.getChildren().setAll(PannelloCreatura.crea(partita.getEroe()));
     }
 }
